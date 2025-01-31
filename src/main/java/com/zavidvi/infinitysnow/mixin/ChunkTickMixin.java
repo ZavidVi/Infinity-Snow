@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin({ServerLevel.class})
 public abstract class ChunkTickMixin {
 
-    public ChunkTickMixin() {
+     public ChunkTickMixin() {
     }
 
     @Inject(
@@ -19,7 +19,7 @@ public abstract class ChunkTickMixin {
             cancellable = true,
             method = {"Lnet/minecraft/server/level/ServerLevel;tickChunk(Lnet/minecraft/world/level/chunk/LevelChunk;I)V"}
     )
-    private void chunkTick(LevelChunk p_217441_1_, int p_217441_2_, CallbackInfo info) {
-        InfinitySnow.chunkTick(p_217441_1_, p_217441_2_);
+    private void chunkTick(LevelChunk levelChunk, int randomTickSpeed, CallbackInfo info) {
+        InfinitySnow.chunkTick(levelChunk, randomTickSpeed);
     }
 }
