@@ -19,8 +19,6 @@ import net.minecraftforge.network.NetworkConstants;
 public class Main {
     public static final String MOD_ID = "infinitysnow", NAME = "InfinitySnow";
 
-
-
     public Main() {
 
         Main.init();
@@ -31,27 +29,15 @@ public class Main {
         IEventBus fml_bus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
-        ModLoadingContext.get().registerExtensionPoint(IExtensionPoint.DisplayTest.class, () -> new IExtensionPoint.DisplayTest(() -> NetworkConstants.IGNORESERVERONLY, (a, b) -> true));
 
     }
 
-
-
-
     public static void init() {
-
-
     }
 
     public static ResourceLocation id(String path) {
         return new ResourceLocation(MOD_ID, path);
     }
-
-
-
-
-
-
 
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
